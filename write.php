@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Write</title>
 </head>
   <style>
 table.table2{
@@ -29,7 +29,27 @@ table.table2 td {
 
 <body>
   <form action="write_action.php" method="post">
+    <table class="table2">
+      <tr>
 
+        <td>제목</td>
+          <td> <input type = "text" name = "title" /> </td>
+    </tr>
+
+    <tr>
+      <td>작성자</td>
+        <td> <input type = "text" name = "writer" /> <td>
+    </tr>
+
+    <tr>
+      <td>제목</td>
+        <td> <textarea name = "contents" cols ="85" rows = "15"></textarea> </td>
+    </tr>
+
+      <tr>
+        <td> <input type ="submit" value ="글 작성" /> </td>
+    </tr>
+    </table>
   </form>
 
 

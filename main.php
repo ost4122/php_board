@@ -29,6 +29,7 @@
         }
         a:link {color : #57A0EE; text-decoration:none;}
         a:hover { text-decoration : underline;}
+
 </style>
 
 <body>
@@ -68,7 +69,7 @@
                       <td width = "500" align = "center">
                       <a href = "view.php?board_number=<?php echo $rows['board_number']?>">
                       <?php echo $rows['board_title']?></td>
-                        <td width = "100" align = "center"><?php echo $rows['board_writer']?></td>
+                        <td width = "100" align = "center"><?php echo $rows['boad_writer']?></td>
                       <td width = "200" align = "center"><?php echo $rows['board_date']?></td>
                       <td width = "50" align = "center"><?php echo $rows['board_hit']?></td>
                       </tr>
@@ -80,12 +81,11 @@
               </table>
 
 
-              <font style="cursor: hand"onClick="location.href='./write.php'">글쓰기</font>
+              <font style="cursor: hand;" onClick="location.href='./write.php'">글쓰기</font>
+              <font style="cursor: hand;" onClick="location.href='./login.php'">로그인</font>
 
 
-
-
-
+            
   </table>
 
 
