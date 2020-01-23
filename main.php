@@ -82,10 +82,21 @@
 
 
               <font style="cursor: hand;" onClick="location.href='./write.php'">글쓰기</font>
-              <font style="cursor: hand;" onClick="location.href='./login.php'">로그인</font>
+            <?php
+
+              if(isset($_session['sessionID'])){    // session값이 있을때 (이미 로그인을 했을때 )
+
+                echo $_session['sessionID'];?> 님 안녕하세요
+            <?php
+          } else{
+            ?>
+            <font style="cursor: hand;" onClick="location.href='./login.php'">로그인</font>
+
+      <?php    }
+              ?>
 
 
-            
+
   </table>
 
 

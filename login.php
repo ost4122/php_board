@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <form action="login_action.php" method="get">
+    <form action="login_action.php" method="post">
       <input type = "text" name = "id" />
       <input type = "password" name = "pw" />
 
