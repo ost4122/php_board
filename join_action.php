@@ -24,5 +24,7 @@ if($result){
 }
 
 
+  mysqli_close($connect);
+
 
  ?>

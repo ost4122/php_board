@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = 'localhost';
 $user = 'root';
 $pw = '111111';
@@ -16,9 +18,10 @@ $success = mysqli_fetch_assoc($result);
 if($success != null){
     // 조회된 아이디가있을때 패스워드 검사
     if($password == $success['pw']){
-      $_session['sessionID'] = $id;
-      session_start();
+      $_SESSION['sessionID'] = $id;
+
       echo "<script> alert('로그인 성공!');</script>";
+
       echo "<script> location.replace('$URL'); </script>";
     }else{
       echo "<script> alert('아이디 또는 패스워드가 일치하지않습니다.');</script>";
@@ -45,6 +48,8 @@ if($success != null){
 // }
 
 
+
+  mysqli_close($connect);
 
 
 

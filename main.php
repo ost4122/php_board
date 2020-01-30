@@ -32,6 +32,10 @@
 
 </style>
 
+
+
+
+
 <body>
 
 <?php
@@ -44,7 +48,23 @@
   $query = "select * from board order by board_number desc";
   $result = $connect -> query($query) ;
   $total = mysqli_num_rows($result);
+
+  session_start();
+
+  // function logincheck(){
+  //
+  //   if(! isset($_SESSION['sessionID'])){
+  //     echo "<script> alert('로그인 후 이용가능합니다.'); </script>";
+  //     echo "<script> history.back(); </script>";
+  //   }else{
+  //     echo "<script> location.replace('write.php');</script>";
+  //   }
+  // }
+
+
  ?>
+
+
 <h2 align=center>게시판</h2>
 <table align = center>
   <thead align = "center">
@@ -80,25 +100,37 @@
               </tbody>
               </table>
 
-
+              <div class = text>
               <font style="cursor: hand;" onClick="location.href='./write.php'">글쓰기</font>
+              <!-- <button type="button" onclick="logincheck();">글쓰기</button> -->
+                </div>
             <?php
+            // session_start();
 
-              if(isset($_session['sessionID'])){    // session값이 있을때 (이미 로그인을 했을때 )
 
-                echo $_session['sessionID'];?> 님 안녕하세요
+              if(isset($_SESSION['sessionID'])){    // session값이 있을때 (이미 로그인을 했을때 )
+                echo $_SESSION['sessionID'];?> 님 안녕하세요
+
+                <div class = text>
+                <font style="cursor: hand;" onClick="location.href='./logout_action.php'">로그아웃</font>
+                  </div>
             <?php
           } else{
             ?>
+              <div class = text>
             <font style="cursor: hand;" onClick="location.href='./login.php'">로그인</font>
-
-      <?php    }
+            </div>      <?php    }
               ?>
 
 
 
   </table>
 
+
+
+  <?php
+    mysqli_close($connect);
+   ?>
 
 
 

@@ -26,7 +26,18 @@ table.table2 td {
   border-bottom: 1px solid #ccc;
 }
   </style>
+<?php
+session_start();
 
+
+// 로그인 확인여부 검사
+  if(! isset($_SESSION['sessionID'])){
+
+    echo "<script> alert('로그인 후 이용가능합니다.'); </script>";
+    echo "<script> location.replace('main.php'); </script>";
+  }
+
+ ?>
 <body>
   <form action="write_action.php" method="post">
     <table class="table2">
@@ -38,11 +49,11 @@ table.table2 td {
 
     <tr>
       <td>작성자</td>
-        <td> <input type = "text" name = "writer" /> <td>
+        <td> <input type = "text" name = "writer" value = "<?= $_SESSION['sessionID']; ?>" disabled/>  <td>
     </tr>
 
     <tr>
-      <td>제목</td>
+      <td>내용</td>
         <td> <textarea name = "contents" cols ="85" rows = "15"></textarea> </td>
     </tr>
 
